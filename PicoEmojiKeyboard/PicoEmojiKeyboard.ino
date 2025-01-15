@@ -12,6 +12,11 @@
  ******************************************************************************/
 #define PNG_FILENAME "/emoji.png"
 
+/* Uncomment one and only one your target OS */
+// #define KEY_FOR_WINDOWS
+#define KEY_FOR_MACOS
+// #define KEY_FOR_LINUX
+
 /*******************************************************************************
  * Start of Arduino_GFX setting
  ******************************************************************************/
@@ -149,29 +154,175 @@ void loop()
 {
   if (digitalRead(BTN_A) == LOW) {
     Serial.println("Button A pressed");
+#if defined(KEY_FOR_WINDOWS)
     Keyboard.press(KEY_LEFT_ALT);
     delay(1);
-    Keyboard.write((const uint8_t*)"d83d+de01", 9);
+    Keyboard.press(KEY_KP_1);
+    delay(1);
+    Keyboard.release(KEY_KP_1);
+    delay(1);
+    Keyboard.press(KEY_KP_2);
+    delay(1);
+    Keyboard.release(KEY_KP_2);
+    delay(1);
+    Keyboard.press(KEY_KP_8);
+    delay(1);
+    Keyboard.release(KEY_KP_8);
+    delay(1);
+    Keyboard.press(KEY_KP_5);
+    delay(1);
+    Keyboard.release(KEY_KP_5);
+    delay(1);
+    Keyboard.press(KEY_KP_1);
+    delay(1);
+    Keyboard.release(KEY_KP_1);
+    delay(1);
+    Keyboard.press(KEY_KP_3);
+    delay(1);
+    Keyboard.release(KEY_KP_3);
     delay(1);
     Keyboard.release(KEY_LEFT_ALT);
-    delay(100);
+#elif defined(KEY_FOR_MACOS)
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.write((const uint8_t*)"d83d+de01", 9);
+    Keyboard.release(KEY_LEFT_ALT);
+#elif defined(KEY_FOR_LINUX)
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.write('u');
+    Keyboard.release(KEY_LEFT_SHIFT);
+    Keyboard.release(KEY_LEFT_CTRL);
+    Keyboard.write((const uint8_t*)"1f601\n", 6);
+#endif
+    delay(200);
   } else if (digitalRead(BTN_B) == LOW) {
     Serial.println("Button B pressed");
+#if defined(KEY_FOR_WINDOWS)
     Keyboard.press(KEY_LEFT_ALT);
-    Keyboard.write((const uint8_t*)"d83d+de05", 9);
+    delay(1);
+    Keyboard.press(KEY_KP_1);
+    delay(1);
+    Keyboard.release(KEY_KP_1);
+    delay(1);
+    Keyboard.press(KEY_KP_2);
+    delay(1);
+    Keyboard.release(KEY_KP_2);
+    delay(1);
+    Keyboard.press(KEY_KP_8);
+    delay(1);
+    Keyboard.release(KEY_KP_8);
+    delay(1);
+    Keyboard.press(KEY_KP_5);
+    delay(1);
+    Keyboard.release(KEY_KP_5);
+    delay(1);
+    Keyboard.press(KEY_KP_1);
+    delay(1);
+    Keyboard.release(KEY_KP_1);
+    delay(1);
+    Keyboard.press(KEY_KP_7);
+    delay(1);
+    Keyboard.release(KEY_KP_7);
+    delay(1);
     Keyboard.release(KEY_LEFT_ALT);
-    delay(100);
+#elif defined(KEY_FOR_MACOS)
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.write((const uint8_t*)"d83d+de05", 9); /* MacOS */
+    Keyboard.release(KEY_LEFT_ALT);
+#elif defined(KEY_FOR_LINUX)
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.write('u');
+    Keyboard.release(KEY_LEFT_SHIFT);
+    Keyboard.release(KEY_LEFT_CTRL);
+    Keyboard.write((const uint8_t*)"1f605\n", 6);
+#endif
+    delay(200);
   } else if (digitalRead(BTN_C) == LOW) {
     Serial.println("Button C pressed");
+#if defined(KEY_FOR_WINDOWS)
     Keyboard.press(KEY_LEFT_ALT);
-    Keyboard.write((const uint8_t*)"d83e+dd23", 9);
+    delay(1);
+    Keyboard.press(KEY_KP_1);
+    delay(1);
+    Keyboard.release(KEY_KP_1);
+    delay(1);
+    Keyboard.press(KEY_KP_2);
+    delay(1);
+    Keyboard.release(KEY_KP_2);
+    delay(1);
+    Keyboard.press(KEY_KP_9);
+    delay(1);
+    Keyboard.release(KEY_KP_9);
+    delay(1);
+    Keyboard.press(KEY_KP_3);
+    delay(1);
+    Keyboard.release(KEY_KP_3);
+    delay(1);
+    Keyboard.press(KEY_KP_1);
+    delay(1);
+    Keyboard.release(KEY_KP_1);
+    delay(1);
+    Keyboard.press(KEY_KP_5);
+    delay(1);
+    Keyboard.release(KEY_KP_5);
+    delay(1);
     Keyboard.release(KEY_LEFT_ALT);
-    delay(100);
+#elif defined(KEY_FOR_MACOS)
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.write((const uint8_t*)"d83e+dd23", 9); /* MacOS */
+    Keyboard.release(KEY_LEFT_ALT);
+#elif defined(KEY_FOR_LINUX)
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.write('u');
+    Keyboard.release(KEY_LEFT_SHIFT);
+    Keyboard.release(KEY_LEFT_CTRL);
+    Keyboard.write((const uint8_t*)"1f923\n", 6);
+#endif
+    delay(200);
   } else if (digitalRead(BTN_D) == LOW) {
     Serial.println("Button D pressed");
+#if defined(KEY_FOR_WINDOWS)
     Keyboard.press(KEY_LEFT_ALT);
-    Keyboard.write((const uint8_t*)"d83e+dd29", 9);
+    delay(1);
+    Keyboard.press(KEY_KP_1);
+    delay(1);
+    Keyboard.release(KEY_KP_1);
+    delay(1);
+    Keyboard.press(KEY_KP_2);
+    delay(1);
+    Keyboard.release(KEY_KP_2);
+    delay(1);
+    Keyboard.press(KEY_KP_9);
+    delay(1);
+    Keyboard.release(KEY_KP_9);
+    delay(1);
+    Keyboard.press(KEY_KP_3);
+    delay(1);
+    Keyboard.release(KEY_KP_3);
+    delay(1);
+    Keyboard.press(KEY_KP_2);
+    delay(1);
+    Keyboard.release(KEY_KP_2);
+    delay(1);
+    Keyboard.press(KEY_KP_1);
+    delay(1);
+    Keyboard.release(KEY_KP_1);
+    delay(1);
     Keyboard.release(KEY_LEFT_ALT);
-    delay(100);
+#elif defined(KEY_FOR_MACOS)
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.write((const uint8_t*)"d83e+dd29", 9); /* MacOS */
+    Keyboard.release(KEY_LEFT_ALT);
+#elif defined(KEY_FOR_LINUX)
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_SHIFT);
+    Keyboard.write('u');
+    Keyboard.release(KEY_LEFT_SHIFT);
+    Keyboard.release(KEY_LEFT_CTRL);
+    Keyboard.write((const uint8_t*)"1f929\n", 6);
+#endif
+    delay(200);
   }
 }
